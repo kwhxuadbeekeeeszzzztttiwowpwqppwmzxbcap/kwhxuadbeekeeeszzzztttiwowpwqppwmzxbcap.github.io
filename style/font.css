@@ -1,0 +1,13 @@
+/*Font Library*/
+
+@font-face  {
+  font-family: "equinox";
+  src: url("../upload/font/equinox.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ubuntu";
+  src: url("../upload/font/ubuntu-regular.ttf");
+  font-weight: normal;
+}

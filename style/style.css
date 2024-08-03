@@ -1,0 +1,805 @@
+@import url("font.css");
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto' Sans-Serif;
+}
+
+
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+@media (max-width: 808px) {
+  .loading-container {
+    display: none;
+  }
+  
+  header {
+    position: fixed;
+    background: #ffffff80;
+    backdrop-filter: blur(10px);
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    height: 30px;
+    box-shadow: 0px 0px 10px #000;
+  }
+  
+  header > .barsdesktop {
+    display: none;
+  }
+  
+  header > .headermenu {
+    position: relative;
+    display: flex;
+  }
+  
+  header > .headermenu > .barsbut {
+    position: absolute;
+    right: 5%;
+    font-size: 30px;
+    color: #000;
+    transition: 1s;
+  }
+  
+  header > .headermenu > img {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 90px;
+  }
+  
+  .sidebarnav {
+    position: fixed;
+    background: #11428255;
+    backdrop-filter: blur(12px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 1;
+    transition: 1s;
+    text-align: left;
+    border-radius: 0 0 15px 15px;
+    z-index: 1;
+  }
+  
+  .sidebarnav > img {
+    width: 150px;
+    height: auto;
+    margin-left: 10px;
+    filter: drop-shadow(0 0 7px #ffffff);
+  }
+  
+  .sidebarnav > a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    margin: 10px;
+    cursor: none;
+    padding: 8px 5px;
+    margin-top: 10px;
+    transition: 1s;
+  }
+  
+  .sidebarnav > a:hover {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    margin: 10px;
+    cursor: none;
+    background: #ffffff7d;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 1s;
+  }
+  
+  .sidebarnav > .search-in {
+    margin: 10px;
+    cursor: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #11428225;
+    transition: 1s;
+  }
+  
+  .sidebarnav > .search-in > i {
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .sidebarnav > .search-in > input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 95%;
+    height: 100%;
+  }
+  
+  .sidebarnav > .menuheader {
+    display: block;
+    margin-bottom: 50px;
+    padding: 10px;
+    width: 90%;
+  }
+  
+ .sidebarnav > .menuheader > a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    cursor: none;
+    padding: 7px 5px;
+    margin-top: 10px;
+    transition: 1s;
+  }
+  
+  .home-bagian-1 {
+    margin-top: 50px;
+    background: linear-gradient(to bottom, #71a1e0 20%, #ffffff);
+  }
+  
+  .home-bagian-1 > h1 {
+    transform: translateY(30px);
+    font-family: equinox;
+    color: #fff;
+    font-size: 40px;
+    margin: 0;
+  }
+  
+  .home-bagian-1 > p {
+    font-size: 15px;
+    margin: 5px;
+  }
+  
+    .home-bagian-1 > .img1 {
+    width: 25%;
+    margin: auto;
+  }
+  
+  .home-bagian-1 > .img2 {
+    width: 90%;
+    height: auto;
+  }
+  
+  .home-bagian-2 {
+    margin-top: 50px;
+  }
+  
+  .home-bagian-2 > h1 {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 30px;
+    margin: 10px;
+  }
+  
+  .home-bagian-2 > p {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 15px;
+    margin: 0 20px;
+  }
+  
+  .home-bagian-3 {
+    margin-top: 50px;
+  }
+  
+  .home-bagian-3 > .item-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #999999;
+    width: 90%;
+    height: 100vw;
+    margin: auto;
+  }
+  
+  .home-bagian-3 > .item-box > figcaption {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    padding: 40px 0;
+    color: #ffffff;
+    font-family: ubuntu;
+    font-size: 20px;
+    backdrop-filter: blur(15px);
+    background-color: #ffffff40;
+    font-weight: bold;
+  }
+  
+  .home-bagian-4 {
+    margin-top: 50px;
+    background-color: #71a1e040;
+    padding: 10px;
+  }
+  
+ .home-bagian-4 > h1 {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 25px;
+    margin: 10px;
+  }
+  
+  .home-bagian-4 > img {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .home-bagian-5 {
+    background-color: #C8E0FF;
+    padding: 10px;
+  }
+  
+  .home-bagian-5 > h1 {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 25px;
+    margin: 10px;
+  }
+  
+  .home-bagian-5 > h2 {
+    font-family: ubuntu;
+    color: #ffffff;
+    font-size: 25px;
+    margin: 10px;
+  }
+  
+  .home-bagian-5 > .container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .home-bagian-5 > .container > .item {
+    flex: 0 0 60%;
+    position: relative;
+    height: 20%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 3px 3px 8px #00000060;
+    margin: 10px;
+    overflow: hidden;
+  }
+  
+  .home-bagian-5 > .container > .item > img {
+    width: 100%;
+  }
+  
+  .home-bagian-5 > .container > .item > h1 {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 25px;
+    margin: 10px;
+  }
+  
+  .home-bagian-5 > .container > .item > .shadow-hover {
+    position: absolute;
+    bottom: -50%;
+    background: linear-gradient(to bottom, #00000000 20%, #000000);
+    height: 40%;
+    width: 100%;
+    padding: 10px 0;
+    transition: 2s;
+  }
+  
+  .home-bagian-5 > .container > .item > .shadow-hover > a {
+    padding: 10px;
+    background-color: #467ec7;
+    color: #ffffff;
+    font-family: ubuntu;
+    border-radius: 100px;
+    text-align: center;
+    position: relative;
+    top: 60%;
+    font-weight: normal;
+    text-decoration: none;
+  }
+  
+  .home-bagian-5 > .container > .item:hover .shadow-hover {
+    bottom: 0;
+    transition: all 2s;
+  }
+  
+  .home-bagian-5 > .container-proyek {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .home-bagian-5 > .container-proyek > .all-item-proyek {
+    display: flex;
+    flex-shrink: 10rem;
+    gap: 5rem;
+    padding: 1rem;
+    animation: infinite-scroll 20s linear infinite;
+  }
+  
+  .home-bagian-5 > .container-proyek > .all-item-proyek > img {
+    height: 6rem;
+  }
+  
+  .home-bagian-6 {
+    background: linear-gradient(to bottom, #C8E0FF 5%, #e3e3e3 100%);
+    padding: 10px;
+    height: 10vh;
+  }
+  
+  .home-bagian-7 {
+    background-color: #e3e3e3;
+    padding: 10px;
+    height: 70vh;
+    padding-top: 50px;
+  }
+  
+  .home-bagian-7 > h1 {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 25px;
+    margin: 10px;
+    text-align: left;
+  }
+  
+  .home-bagian-7 > div {
+    display: flex;
+    color: #ffffff;
+  }
+  
+  .home-bagian-7 > div > a {
+    color: #000000;
+    font-size: 17px;
+    text-decoration: none;
+    cursor: none;
+    margin: 10px;
+  }
+  
+  .home-bagian-7 > button {
+    background: transparent;
+    border: none;
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 25px;
+    margin: 8px;
+    text-align: left;
+    float: left;
+    width: 90%;
+    border-bottom: 1.5px solid #999999;
+  }
+  
+  .home-bagian-7 > ul {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .home-bagian-7 > ul > li {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 20px;
+    margin: 5px 25px;
+    text-align: left;
+  }
+  
+  .home-bagian-7 > img {
+    width: 60%;
+    margin: 0;
+  }
+  
+  
+}
+
+
+@media (min-width: 808px) {
+  .loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    z-index: 10000;
+    transition: all 3s;
+  }
+  
+  .loading-container > img {
+    width: 20%;
+  }
+  
+  header {
+    position: fixed;
+    background: #ffffff55;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    margin: 10px auto;
+    width: 90%;
+    height: 25px;
+    backdrop-filter: blur(20px);
+    border: 2px solid #000000;
+    border-radius: 50px;
+    z-index: 1000;
+  }
+
+  header > .headermenu,
+  .sidebarnav {
+    display: none;
+  }
+
+  header > .barsdesktop {
+    user-select: none;
+  }
+
+  .barsdesktop > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .barsdesktop > ul > li {
+    display: inline;
+  }
+
+  .barsdesktop > ul > img {
+    display: inline;
+    position: relative;
+    float: left;
+    top: -15px;
+    margin-left: 10px;
+    width: 100px;
+    transition: 1s;
+  }
+
+  .barsdesktop > ul > img:hover {
+    display: inline;
+    position: relative;
+    float: left;
+    font-size: 20px;
+    top: -15px;
+    margin-left: 10px;
+    transform: scale(0.9);
+    transition: 1s;
+  }
+
+  .barsdesktop > ul > li > .menuhalaman {
+    color: #000;
+    text-decoration: none;
+    cursor: none;
+    position: relative;
+    top: 5px;
+    font-family: 'Nunito', sans-serif;
+    margin: 0 2%;
+  }
+
+  .barsdesktop > ul > li > .submenu {
+    color: #000;
+    text-decoration: none;
+    cursor: none;
+    position: relative;
+    top: 5px;
+    left: 25%;
+    font-family: 'Nunito', sans-serif;
+    margin: 0 5px;
+  }
+
+  .barsdesktop > ul > li > a::before,
+  .barsdesktop > ul > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 1s ease;
+  }
+
+  .barsdesktop > ul > li > a::before {
+    left: 50%;
+    transform-origin: left;
+  }
+
+  .barsdesktop > ul > li > a::after {
+    right: 50%;
+    transform-origin: right;
+  }
+
+  .barsdesktop > ul > li > a:hover::before,
+  .barsdesktop > ul > li > a:hover::after {
+    width: 50%;
+  }
+  
+  .home-bagian-1 {
+    margin-top: 50px;
+    background: linear-gradient(to bottom, #71a1e0 20%, #ffffff);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .home-bagian-1 > h1 {
+    transform: translateY(30px);
+    font-family: equinox;
+    color: #fff;
+    font-size: 30px;
+    margin: 0;
+  }
+  
+  .home-bagian-1 > p {
+    font-size: 15px;
+    margin: 5px;
+  }
+  
+  .home-bagian-1 > .img1 {
+    width: 15%;
+    margin: auto;
+    height: auto;
+  }
+  
+  .home-bagian-1 > .img2 {
+    width: 60%;
+    margin: auto;
+    height: auto;
+  }
+  
+  .home-bagian-2 {
+    margin-top: 150px;
+  }
+  
+  .home-bagian-2 > h1 {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 40px;
+    margin: 10px;
+  }
+  
+  .home-bagian-2 > p {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 18px;
+    margin: 0 30%;
+  }
+  
+  .home-bagian-3 {
+    margin-top: 50px;
+    
+  }
+  
+  .home-bagian-3 > .item-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #999999;
+    width: 50%;
+    height: 50vw;
+    margin: auto;
+  }
+  
+  .home-bagian-3 > .item-box > figcaption {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    padding: 40px 0;
+    color: #ffffff;
+    font-family: ubuntu;
+    font-size: 20px;
+    backdrop-filter: blur(15px);
+    background-color: #ffffff40;
+    font-weight: bold;
+  }
+  
+  .home-bagian-4 {
+    margin-top: 50px;
+    background-color: #71a1e040;
+    padding: 80px 10px;
+  }
+  
+ .home-bagian-4 > h1 {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 30px;
+    margin: 30px;
+  }
+  
+  .home-bagian-4 > img {
+    width: 30%;
+    margin: auto;
+  }
+  
+  .home-bagian-5 {
+    background-color: #C8E0FF;
+    padding: 10px;
+  }
+  
+  .home-bagian-5 > h1 {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 25px;
+    margin: 10px;
+  }
+  
+  .home-bagian-5 > h2 {
+    font-family: ubuntu;
+    color: #ffffff;
+    font-size: 25px;
+    margin: 10px;
+  }
+  
+  .home-bagian-5 > .container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .home-bagian-5 > .container > .item {
+    flex: 0 0 20%;
+    position: relative;
+    height: 20%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 3px 3px 8px #00000060;
+    margin: 10px;
+    overflow: hidden;
+  }
+  
+  .home-bagian-5 > .container > .item > img {
+    width: 100%;
+  }
+  
+  .home-bagian-5 > .container > .item > h1 {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 25px;
+    margin: 10px;
+  }
+  
+  .home-bagian-5 > .container > .item > .shadow-hover {
+    position: absolute;
+    bottom: -50%;
+    background: linear-gradient(to bottom, #00000000 20%, #000000);
+    height: 40%;
+    width: 100%;
+    padding: 10px 0;
+    transition: 2s;
+  }
+  
+  .home-bagian-5 > .container > .item > .shadow-hover > a {
+    padding: 10px;
+    background-color: #467ec7;
+    color: #ffffff;
+    font-family: ubuntu;
+    border-radius: 100px;
+    text-align: center;
+    position: relative;
+    top: 60%;
+    font-weight: normal;
+    text-decoration: none;
+  }
+  
+  .home-bagian-5 > .container > .item:hover .shadow-hover {
+    bottom: 0;
+    transition: all 2s;
+  }
+  
+  .home-bagian-5 > .container-proyek {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .home-bagian-5 > .container-proyek > .all-item-proyek {
+    display: flex;
+    flex-shrink: 10rem;
+    gap: 5rem;
+    padding: 1rem;
+    animation: infinite-scroll 20s linear infinite;
+  }
+  
+  .home-bagian-5 > .container-proyek > .all-item-proyek > img {
+    height: 6rem;
+  }
+  
+  .home-bagian-6 {
+    background: linear-gradient(to bottom, #C8E0FF 5%, #e3e3e3 100%);
+    padding: 10px;
+    height: 10vh;
+  }
+  
+  .home-bagian-7 {
+    background-color: #e3e3e3;
+    padding: 10px;
+    height: 70vh;
+    padding-top: 50px;
+  }
+  
+  .home-bagian-7 > h1 {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 25px;
+    margin: 10px;
+    text-align: left;
+  }
+  
+  .home-bagian-7 > div {
+    display: flex;
+    color: #ffffff;
+  }
+  
+  .home-bagian-7 > div > a {
+    color: #000000;
+    font-size: 17px;
+    text-decoration: none;
+    cursor: none;
+    margin: 10px;
+  }
+  
+  .home-bagian-7 > button {
+    background: transparent;
+    border: none;
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 25px;
+    margin: 8px;
+    text-align: left;
+    float: left;
+    width: 90%;
+    border-bottom: 1.5px solid #999999;
+  }
+  
+  .home-bagian-7 > ul {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .home-bagian-7 > ul > li {
+    font-family: ubuntu;
+    color: #000000;
+    font-size: 20px;
+    margin: 5px 25px;
+    text-align: left;
+  }
+  
+  .home-bagian-7 > img {
+    width: 20%;
+    margin: 0;
+  }
+  
+  
+}
